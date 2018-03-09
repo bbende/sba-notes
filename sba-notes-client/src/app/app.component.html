@@ -1,0 +1,32 @@
+<mat-sidenav-container class="all-wrap" fullscreen>
+  <!-- SIDENAV -->
+  <mat-sidenav #sidenav>
+    <h2>Notes App</h2>
+    <mat-list>
+      <!-- First list item is hidden to prevent the first item from auto-focusing -->
+      <mat-list-item [routerLink]="['/']" (click)="sidenav.close()" style="height: 0; position: absolute;"></mat-list-item>
+      <mat-list-item [routerLink]="['/notes']" (click)="sidenav.close()"> Notes</mat-list-item>
+      <mat-list-item [routerLink]="['/about']" (click)="sidenav.close()"> About</mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+
+  <div class="page-wrap">
+    <!-- TOOLBAR -->
+    <header role="banner">
+      <mat-toolbar color="primary">
+        <button type="button" mat-icon-button (click)="sidenav.open()" title="Open Sidenav">
+          <mat-icon>menu</mat-icon>
+        </button>
+        Notes
+      </mat-toolbar>
+    </header>
+    <!-- MAIN CONTENT -->
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+      Your sticky footer with a variable height.
+    </footer>
+  </div>
+</mat-sidenav-container>
