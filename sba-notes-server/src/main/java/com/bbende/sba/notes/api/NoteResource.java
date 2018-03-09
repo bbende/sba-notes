@@ -45,6 +45,7 @@ public class NoteResource {
         Note note = new Note();
         note.setId(idCounter.getAndIncrement());
         note.setText("test");
+        notes.add(note);
     }
 
     @GET
