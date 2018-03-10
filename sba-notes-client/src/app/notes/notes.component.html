@@ -1,3 +1,10 @@
-<p>
-  notes works!
-</p>
+<mat-card>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let note of notes">
+        <mat-icon mat-list-icon>note</mat-icon>
+        <p mat-line>{{ note.text }}</p>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

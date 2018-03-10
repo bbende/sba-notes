@@ -1,7 +1,7 @@
 <mat-sidenav-container class="all-wrap" fullscreen>
   <!-- SIDENAV -->
-  <mat-sidenav #sidenav>
-    <h2>Notes App</h2>
+  <mat-sidenav #sidenav mode="push">
+    <h2>Menu</h2>
     <mat-list>
       <!-- First list item is hidden to prevent the first item from auto-focusing -->
       <mat-list-item [routerLink]="['/']" (click)="sidenav.close()" style="height: 0; position: absolute;"></mat-list-item>
@@ -26,7 +26,7 @@
     </main>
     <!-- FOOTER -->
     <footer>
-      Your sticky footer with a variable height.
+      Notes 2018
     </footer>
   </div>
 </mat-sidenav-container>
