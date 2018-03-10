@@ -43,11 +43,21 @@ body {
   font-family: Roboto, sans-serif;
 }
 
-/*
- * Actual Sticky Footer Styles
- */
-.all-wrap {
-  min-height: 100vh;
+.mat-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+}
+
+.mat-sidenav-container {
+    margin-top: 64px;
+}
+
+.mat-sidenav {
+    min-width:150px;
+    padding: 20px;
 }
 
 .page-wrap {
@@ -56,13 +66,6 @@ body {
   min-height: 100vh;
 }
 
-.content {
-  flex: 1;
-}
-
-/*
- * Make the Component injected by Router Outlet full height:
- */
 main {
   display: flex;
   flex-direction: column;
@@ -73,11 +76,15 @@ main {
   padding: 20px;
 }
 
-.mat-sidenav {
-    min-width:200px;
-    padding: 20px;
+.content {
+  flex: 1;
 }
 
-.footer {
-    padding: 20px;
+footer {
+    position: fixed;
+    bottom: 0px;
+    z-index: 2;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
 }
