@@ -26,15 +26,12 @@ public class NoteResource {
     private final AtomicInteger idCounter = new AtomicInteger(1);
 
     public NoteResource() {
-        final Note note1 = new Note();
-        note1.setId(idCounter.getAndIncrement());
-        note1.setText("This is note 1");
-        notes.add(note1);
-
-        final Note note2 = new Note();
-        note2.setId(idCounter.getAndIncrement());
-        note2.setText("This is note 2");
-        notes.add(note2);
+        for (int i=1; i <= 5; i++) {
+            final Note note = new Note();
+            note.setId(idCounter.getAndIncrement());
+            note.setText("This is note " + i);
+            notes.add(note);
+        }
     }
 
     @GET

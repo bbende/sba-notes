@@ -1,14 +1,22 @@
-<div style="height: 100vh;">
+<div style="height: 100vh; min-width:200px;">
 
-  <mat-toolbar color="primary">
-    <button type="button" mat-icon-button (click)="sidenav.toggle()" title="Open Sidenav">
-      <mat-icon>menu</mat-icon>
-    </button>
-    Notes
+  <mat-toolbar color="primary" layout="row">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button type="button" mat-icon-button (click)="sidenav.toggle()" title="Open Sidenav">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div fxShow="true" fxHide.lt-md="true" fxFlex>
+        <mat-toolbar-row>
+            <button mat-button [routerLink]="['/notes']">Notes</button>
+            <button mat-button [routerLink]="['/about']">About</button>
+            <span class="flex-spacer"></span>
+            <button mat-button [routerLink]="['/']">Logout</button>
+        </mat-toolbar-row>
+    </div>
   </mat-toolbar>
 
   <mat-sidenav-container fxFlex>
-
     <mat-sidenav #sidenav fxLayout="column" mode="push">
       <mat-list>
         <!-- First list item is hidden to prevent the first item from auto-focusing -->
@@ -17,14 +25,16 @@
         <mat-list-item [routerLink]="['/about']" (click)="sidenav.close()"> About</mat-list-item>
       </mat-list>
     </mat-sidenav>
-
     <div class="page-wrap">
       <main class="content">
         <router-outlet></router-outlet>
       </main>
-      <footer>Footer</footer>
+      <footer>
+        <div color="primary">
+        Footer
+        </div>
+      </footer>
     </div>
-
   </mat-sidenav-container>
 
 </div>

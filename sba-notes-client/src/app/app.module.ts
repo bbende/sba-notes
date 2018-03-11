@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { AppComponent } from './app.component';
 import { NotesComponent } from './notes/notes.component';
@@ -28,6 +29,7 @@ import { NotesService } from './shared/notes/notes.service';
     HttpClientModule,
     MaterialModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     AppRoutingModule
   ],
   entryComponents: [

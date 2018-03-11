@@ -43,6 +43,7 @@ body {
   font-family: Roboto, sans-serif;
 }
 
+/* Fixed position so toolbar stays when scrolling */
 .mat-toolbar {
     position: fixed;
     top: 0;
@@ -51,10 +52,17 @@ body {
     width: 100%;
 }
 
-.mat-sidenav-container {
-    margin-top: 64px;
+/* Spacer to push toolbar items to the right */
+.flex-spacer {
+  flex: 1 1 auto;
 }
 
+/* Push the container down so it isn't behind the toolbar */
+.mat-sidenav-container {
+    margin-top: 60px;
+}
+
+/* Set the min size and padding for the side nav menu */
 .mat-sidenav {
     min-width:150px;
     padding: 20px;
@@ -73,18 +81,23 @@ main {
     flex: 1;
     display: block;
   };
-  padding: 20px;
+  padding: 40px;
 }
 
 .content {
   flex: 1;
 }
 
+/* Fix the footer at the bottom */
 footer {
     position: fixed;
     bottom: 0px;
     z-index: 2;
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
+    /*
+    background-color: #3f51b5;
+    color: white;
+    */
 }
