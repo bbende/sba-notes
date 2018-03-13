@@ -4,7 +4,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { MaterialModule } from './material/material.module';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from "@angular/flex-layout";
@@ -27,6 +27,7 @@ import { NotesService } from './shared/notes/notes.service';
     FormsModule,
     HttpModule,
     HttpClientModule,
+    HttpClientXsrfModule.disable(),
     MaterialModule,
     BrowserAnimationsModule,
     FlexLayoutModule,

@@ -2,6 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
+export interface Note {
+    id: string;
+    text: string;
+}
+
 @Injectable()
 export class NotesService {
 
@@ -10,26 +15,26 @@ export class NotesService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<any> {
-    return this.http.get(this.NOTES_API);
+  getAll(): Observable<Note[]> {
+    return this.http.get<Note[]>(this.NOTES_API);
   }
 
   get(id: string) {
-    return this.http.get(this.NOTES_API + '/' + id);
+    return this.http.get<Note>(this.NOTES_API + '/' + id);
   }
 
-  save(note: any): Observable<any> {
-    let result: Observable<Object>;
+  save(note: Note): Observable<Note> {
+    let result: Observable<Note>;
     if (note['href']) {
-      result = this.http.put(note.href, note);
+      result = this.http.put<Note>(note.id, note);
     } else {
-      result = this.http.post(this.NOTES_API, note);
+      result = this.http.post<Note>(this.NOTES_API, note);
     }
     return result;
   }
 
-  remove(href: string) {
-    return this.http.delete(href);
+  remove(id: string) {
+    return this.http.delete<Note>(this.NOTES_API + '/' + id);
   }
 
 }

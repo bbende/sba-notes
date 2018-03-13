@@ -4,6 +4,9 @@
       <mat-list-item *ngFor="let note of notes">
         <mat-icon mat-list-icon>note</mat-icon>
         <p mat-line>{{ note.text }}</p>
+        <button mat-button color="secondary" (click)="removeNote(note.id)" type="button">
+          <mat-icon mat-list-icon>delete</mat-icon>
+        </button>
       </mat-list-item>
     </mat-list>
   </mat-card-content>
