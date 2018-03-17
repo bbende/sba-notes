@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from "./app-routing.module";
 import { MaterialModule } from './material/material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HTTP_INTERCEPTORS, HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
@@ -14,17 +14,20 @@ import { NotesComponent } from './notes/notes.component';
 import { AboutComponent } from './about/about.component';
 import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
 import { NotesService } from './shared/notes/notes.service';
+import { AddNoteComponent } from './notes/add-note/add-note.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotesComponent,
     AboutComponent,
-    ErrorDialogComponent
+    ErrorDialogComponent,
+    AddNoteComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     HttpClientModule,
     HttpClientXsrfModule.disable(),
@@ -34,7 +37,8 @@ import { NotesService } from './shared/notes/notes.service';
     AppRoutingModule
   ],
   entryComponents: [
-    ErrorDialogComponent
+    ErrorDialogComponent,
+    AddNoteComponent
   ],
   providers: [
     NotesService,

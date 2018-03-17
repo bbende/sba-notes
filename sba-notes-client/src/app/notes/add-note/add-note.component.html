@@ -1,0 +1,12 @@
+<form [formGroup]="form" (ngSubmit)="submit(form)">
+  <mat-dialog-content>
+    <mat-form-field>
+      <input matInput formControlName="text" placeholder="Enter Note Text">
+    </mat-form-field>
+  </mat-dialog-content>
+  <br/>
+  <mat-dialog-actions>
+    <button mat-raised-button type="button" mat-dialog-close>Cancel</button>
+    <button mat-raised-button type="submit" color="primary">Add</button>
+  </mat-dialog-actions>
+</form>

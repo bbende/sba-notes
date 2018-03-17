@@ -4,10 +4,17 @@
       <mat-list-item *ngFor="let note of notes">
         <mat-icon mat-list-icon>note</mat-icon>
         <p mat-line>{{ note.text }}</p>
-        <button mat-button color="secondary" (click)="removeNote(note.id)" type="button">
+        <button mat-button (click)="removeNote(note.id)" type="button">
           <mat-icon mat-list-icon>delete</mat-icon>
         </button>
       </mat-list-item>
     </mat-list>
   </mat-card-content>
 </mat-card>
+
+<div class="add-note">
+  <span class="flex-spacer"></span>
+  <button mat-fab color="primary" (click)="addNote()" type="button">
+    <mat-icon mat-list-icon>note_add</mat-icon>
+  </button>
+</div>
